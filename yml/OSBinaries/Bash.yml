@@ -41,8 +41,8 @@ Commands:
     Tags:
       - Execute: CMD
   - Command: bash.exe
-    Description: When executed, bash.exe queries the registry value of 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Lxss\MSI\InstallLocation', which contains a folder path ('c:\program files\wsl' by default). If the value points to another folder containeing a file name wsl.exe, it will be executed instead of the legitimate wsl.exe in the program files folder.
-    Usecase: Execute a payload as a child process of bash.exe while masquerading as WSL.
+    Description: When executed, `bash.exe` queries the registry value of `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Lxss\MSI\InstallLocation`, which contains a folder path (`c:\program files\wsl` by default). If the value points to another folder containing a file named `wsl.exe`, it will be executed instead of the legitimate `wsl.exe` in the program files folder.
+    Usecase: Execute a payload as a child process of `bash.exe` while masquerading as WSL.
     Category: Execute
     Privileges: User
     MitreID: T1218
